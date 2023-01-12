@@ -1,0 +1,33 @@
+{
+  "name": "ws-00-argonautes",
+  "version": "0.0.1",
+  "description": "Constituer un équipage pour Jason",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromeabel/ws-00-argonautes.git"
+  },
+  "keywords": [
+    "js",
+    "html",
+    "css",
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "Jérôme Abel",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/jeromeabel/ws-00-argonautes/issues"
+  },
+  "homepage": "https://github.com/jeromeabel/ws-00-argonautes#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

@@ -1,7 +1,7 @@
 // Environment
-if (process.env.NODE_ENV !== 'production'){
+//if (process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
-}
+//}
 
 // Import lib
 const express = require("express")

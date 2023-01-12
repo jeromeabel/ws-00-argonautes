@@ -9,3 +9,5 @@
 - [ ] Front
     - [ ] Validation du formulaire (listes d'argonautes ?)
     - [ ] CSS : partials?, bootstrap, sass, icones
+- DEPLOY (.env + Render)
+- ESLINT

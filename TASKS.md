@@ -11,3 +11,6 @@
     - [ ] CSS : partials?, bootstrap, sass, icones
 - DEPLOY (.env + Render)
 - ESLINT
+- React ?
+- Vercel
+- MongoAtlas

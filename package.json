@@ -2,6 +2,7 @@
   "name": "ws-00-argonautes",
   "version": "0.0.1",
   "description": "Constituer un équipage pour Jason",
+  "main": "app.js",
   "scripts": {
     "dev": "nodemon app.js"
   },

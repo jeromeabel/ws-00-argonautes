@@ -28,11 +28,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/', argonautesRouter)
 
 // Database 
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}/${process.env.DB_BASE}?retryWrites=true&w=majority`;
 mongoose.set('strictQuery', false)
-mongoose.connect(process.env.DB_CONN_STRING, { useNewUrlParser: true })
-const db = mongoose.connection
-db.on('error', (err) => console.error(err))
-db.once('open', () => console.log('Connected to Database'))
+mongoose.connect( uri,  { useNewUrlParser: true, useUnifiedTopology: true } );
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function () {
+  console.log("Connected successfully");
+});
 
 // Launch the server
 app.listen(PORT, function() {

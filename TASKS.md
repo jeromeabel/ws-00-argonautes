@@ -9,8 +9,6 @@
 - [ ] Front
     - [ ] Validation du formulaire (listes d'argonautes ?)
     - [ ] CSS : partials?, bootstrap, sass, icones
-- DEPLOY (.env + Render)
+- [x] Deploy on Render.com + MongoAtlas + .env
 - ESLINT
 - React ?
-- Vercel
-- MongoAtlas

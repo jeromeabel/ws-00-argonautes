@@ -1,7 +1,7 @@
 // Environment
-//if (process.env.NODE_ENV !== 'production'){
+if (process.env.NODE_ENV !== 'production'){
     require('dotenv').config();
-//}
+}
 
 // Import lib
 const express = require("express")
@@ -30,9 +30,10 @@ app.use('/', argonautesRouter)
 // Database 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}/${process.env.DB_BASE}?retryWrites=true&w=majority`;
 mongoose.set('strictQuery', false)
-mongoose.connect( uri,  { useNewUrlParser: true, useUnifiedTopology: true } );
+//process.env.DB_ATLAS
+mongoose.connect( uri ,  { useNewUrlParser: true, useUnifiedTopology: true } );
 const db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
+db.on('error', (err) => console.error(err))
 db.once("open", function () {
   console.log("Connected successfully");
 });

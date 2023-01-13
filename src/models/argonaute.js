@@ -10,6 +10,6 @@ const argonauteSchema = mongoose.Schema({
     }
 })
 
-const argonauteData = mongoose.model('argonauteData', argonauteSchema);
+const ArgonauteCollection = mongoose.model('argonautes', argonauteSchema);
 
-module.exports = argonauteData;
+module.exports = ArgonauteCollection;

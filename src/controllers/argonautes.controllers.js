@@ -1,13 +1,12 @@
-// CRUD functions
-// Implémentation de GET, POST, DELETE
+// CRUD functions : GET, POST, DELETE
 
-const Argonaute = require('../models/argonaute.js');
+const ArgonauteCollection = require('../models/argonaute.js');
 
 // GET
-const getAll = async (req, res) => {
+const getArgonautes = async (req, res) => {
     //console.log("GET");
     try {
-        const argonautes = await Argonaute.find();
+        const argonautes = await ArgonauteCollection.find();
         res.status(200).render('index.ejs', { argonautes: argonautes })
     } catch(error) {
         res.status(404).json({message: error.message});
@@ -15,9 +14,9 @@ const getAll = async (req, res) => {
 }
 
 // POST
-const createArgonaute = async (req, res) => {
+const addArgonaute = async (req, res) => {
     // console.log("Create Name : ", req.body);
-    const newArgonaute = new Argonaute({ name:req.body.name })
+    const newArgonaute = new ArgonauteCollection({ name:req.body.name })
     try {
         await newArgonaute.save();
         res.status(201).redirect("/")
@@ -31,13 +30,13 @@ const deleteArgonaute = async (req, res) => {
     const name = req.params.name;
     //console.log("Delete Name : ", name)
     try {
-        await Argonaute.findOneAndRemove({name: name});
+        await ArgonauteCollection.findOneAndRemove({name: name});
         res.status(203).redirect("/")
     } catch(error) {
         res.status(402).json({message: error.message});
     }
 }
 
-module.exports.getAll = getAll;
-module.exports.createArgonaute = createArgonaute;
+module.exports.getAll = getArgonautes;
+module.exports.createArgonaute = addArgonaute;
 module.exports.deleteArgonaute = deleteArgonaute;

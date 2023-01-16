@@ -1,16 +1,17 @@
-import axios from 'axios';
+import API from '../api';
 
 function ArgoItem({item, data, setData}) {
 
   // Delete
-  async function deleteArgonaute(e, name) {
-    e.preventDefault();
-    axios.delete(`http://localhost:3000/api/remove/${name}`)
-    .then(response => {
-        const newData = data.filter( (it) => it._id !== item._id );
-        setData(newData);
-    });
-  }
+    async function deleteArgonaute(e, name) {
+        e.preventDefault();
+        //axios.delete(`http://localhost:3000/api/remove/${name}`)
+        API.delete(`remove/${name}`)
+        .then(response => {
+            const newData = data.filter( (it) => it._id !== item._id );
+            setData(newData);
+        });
+    }
 
     return (
         <div 

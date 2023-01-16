@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from 'axios';
+import API from '../api';
 
 function ArgoForm({data, setData}) {
  
@@ -8,8 +8,9 @@ function ArgoForm({data, setData}) {
   // Add a new Argonaute
   async function onSubmit(e) {
     e.preventDefault();
-    const newArgonaute = {name};
-    axios.post('http://localhost:3000/api/add', newArgonaute)
+    //const newArgonaute = {name};
+    //axios.post('http://localhost:3000/api/add', newArgonaute)
+    API.post('/add', {name})
     .then(response => {
         setData([...data, response.data]);
         setName("");

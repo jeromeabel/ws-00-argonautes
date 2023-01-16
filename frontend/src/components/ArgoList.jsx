@@ -9,7 +9,13 @@ function ArgoList( {data, setData} ) {
                 gridGap: "1rem",
                 gridTemplateColumns: "repeat(3, 1fr)",
             }}>
-                { data.map( (item) => <ArgoItem key={item._id} item={item} data={data} setData={setData} /> )}
+            { data.map( (item) => 
+                <ArgoItem 
+                    key={item._id} 
+                    item={item} 
+                    data={data} 
+                    setData={setData} 
+                    /> )}
             </div>
         </section>
     )

@@ -1,21 +1,21 @@
 // Libs
 import React, { useEffect, useState } from "react";
-import axios from 'axios';
 
 // Components
 import Header from './Header'
 import ArgoForm from './ArgoForm'
 import ArgoList from "./ArgoList";
 import Footer from './Footer'
+import API from '../api';
 
 function App() {
-  const API_URL = 'http://localhost:3000/api'
   const [data, setData] = useState([])
 
   // FETCH : GET
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios( API_URL, );
+      //const result = await axios( API_URL, );
+      const result = await API.get();
       setData(result.data.argonautes);
     };
     fetchData();

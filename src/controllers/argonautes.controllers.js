@@ -4,10 +4,10 @@ const ArgonauteCollection = require('../models/argonaute.js');
 
 // GET
 const getArgonautes = async (req, res) => {
-    //console.log("GET");
     try {
         const argonautes = await ArgonauteCollection.find();
-        res.status(200).render('index.ejs', { argonautes: argonautes })
+        //res.status(200).render('index.ejs', { argonautes: argonautes })
+        res.status(200).json({argonautes: argonautes})
     } catch(error) {
         res.status(404).json({message: error.message});
     }
@@ -15,23 +15,21 @@ const getArgonautes = async (req, res) => {
 
 // POST
 const addArgonaute = async (req, res) => {
-    // console.log("Create Name : ", req.body);
     const newArgonaute = new ArgonauteCollection({ name:req.body.name })
     try {
         await newArgonaute.save();
-        res.status(201).redirect("/")
+        res.status(201).json(newArgonaute)
     } catch(error) {
         res.status(400).json({ message : error.message});
     }
 }
 
-// DELETE : works with method-override
+// DELETE
 const deleteArgonaute = async (req, res) => {
     const name = req.params.name;
-    //console.log("Delete Name : ", name)
     try {
-        await ArgonauteCollection.findOneAndRemove({name: name});
-        res.status(203).redirect("/")
+        const result = await ArgonauteCollection.findOneAndRemove({name: name});
+        res.status(203).json(result)
     } catch(error) {
         res.status(402).json({message: error.message});
     }

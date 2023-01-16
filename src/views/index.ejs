@@ -33,6 +33,7 @@
       <% argonautes.forEach( (argonaute) => { %>
         <li class="member-item">
             <span><%= argonaute.name %></span>
+            <!-- method override -->
             <form method="POST" action="/remove/<%= argonaute.name %>?_method=DELETE" >
               <button type="submit">X</button>
             </form>

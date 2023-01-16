@@ -24,16 +24,17 @@ app.use('/api', argonautesRouter) // Route API
 app.use(express.static(path.resolve(__dirname, '../frontend/dist'))); // Front-end
 
 // Database 
-let uri = process.env.DB_ATLAS
-uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}/${process.env.DB_BASE}?retryWrites=true&w=majority`;
-if ( process.env.DB_IS_LOCAL ) uri = process.env.DB_LOCALHOST
+//let uri = process.env.DB_ATLAS
+//if ( process.env.DB_IS_LOCAL ) uri = process.env.DB_LOCALHOST
+//const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_CLUSTER}/argoBase?retryWrites=true&w=majority`;
 mongoose.set('strictQuery', false)
-mongoose.connect( uri ,  { useNewUrlParser: true, useUnifiedTopology: true } );
+mongoose.connect( process.env.DB_ATLAS ,  { useNewUrlParser: true, useUnifiedTopology: true } );
 const db = mongoose.connection;
 db.on('error', (err) => console.error(err))
 db.once("open", function () {
   console.log("✓ Connected to Database");
 });
+
 
 // Server
 app.listen(PORT, function() {

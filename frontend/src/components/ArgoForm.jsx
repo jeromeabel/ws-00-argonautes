@@ -37,6 +37,9 @@ function ArgoForm({data, setData}) {
               onChange={event => {
                 setName(event.target.value);
               }}
+              required
+              pattern="[A-ÿ\-\s]{3,32}"
+              title="Doit comporter au moins trois caractères"
               />
           </div>
         </div>

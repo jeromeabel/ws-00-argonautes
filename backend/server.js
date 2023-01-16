@@ -1,13 +1,11 @@
 // Environment
-if (process.env.NODE_ENV !== 'production'){
-    require('dotenv').config();
-}
+require('dotenv').config();
 
 // Import libs
 const express = require("express")
 const mongoose = require('mongoose')
 const path = require('path')
-//const cors = require('cors') // Dev Front/Back
+const cors = require('cors') // Dev Front/Back
 
 // Import Router
 const argonautesRouter = require("./src/argonautes.routes");
@@ -18,7 +16,7 @@ const PORT = process.env.PORT;
 
 // App use : middlewares
 app.use(express.json());
-//app.use(cors())
+app.use(cors())
 app.use('/api', argonautesRouter) // Route API
 app.use(express.static(path.resolve(__dirname, '../frontend/dist'))); // Front-end
 

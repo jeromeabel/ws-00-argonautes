@@ -1,0 +1,32 @@
+{
+  "name": "argonautes-api",
+  "version": "1.0.0",
+  "description": "API for Argonautes project",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js && yarn dev ../frontend/",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeromeabel/ws-00-argonautes.git"
+  },
+  "homepage": "https://github.com/jeromeabel/ws-00-argonautes#readme",
+  "author": "Jérôme Abel",
+  "keywords": [
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^6.8.3"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "nodemon": "^2.0.20"
+  }
+}

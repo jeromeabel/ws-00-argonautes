@@ -23,6 +23,12 @@ Aider Jason à constituer son équipage
 
 
 ## TASKS
+
+### Todo
+- [ ] ESLINT
+- [ ] Validation côté serveur
+
+### Done
 - [x] Copie du template du projet
 - [x] Installer MongoDB / Linux
 - [x] Back-end
@@ -32,7 +38,9 @@ Aider Jason à constituer son équipage
     - [x] Deploy on Render.com + MongoAtlas + .env
 - [ ] Front
     - [x] React : components, useEffect, HTTP Requests
-    - [x] CSS Bootstrap
-    - [ ] Validation du formulaire
-- [ ] ESLINT
+    - [x] CSS Bootstrap + style inline jsx
+    - [x] Validation du formulaire : chaine de caractères, nombre limité à 50, regex
+    - [x] Loader et messages d'erreurs
 
+
+#

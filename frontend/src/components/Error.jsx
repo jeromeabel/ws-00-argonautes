@@ -1,10 +1,10 @@
-function Error( {message} ){
+function Error( { messageFr, messageAuto } ){
     return (
-        <div className="container mx-auto text-center">
-          <div className="alert alert-danger d-flex p-4 fs-5 align-items-center" role="alert">
+        <div className="container mx-auto text-center mt-4">
+          <div className="alert alert-danger d-flex p-3 fs-5 align-items-center" role="alert">
             <p>
               <i className="bi bi-exclamation-triangle-fill me-4"></i>
-              { `Désolé, il y a problème lors de la récupération des données : ${message}` }
+              { `${messageFr} : ${messageAuto}` }
             </p>
           </div>
         </div>

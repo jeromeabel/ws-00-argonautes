@@ -8,7 +8,7 @@ import ArgoList from "./ArgoList";
 import Footer from './Footer';
 import Spinner from './Spinner';
 import Error from './Error';
-import API from '../api';
+import API from '../utils/api';
 
 function App() {
   const [data, setData] = useState([])
@@ -37,7 +37,11 @@ function App() {
       <Header />
       <main>
         <ArgoForm data={data} setData={setData} />
-        { error &&  <Error message={error} /> }
+        { error &&  
+          <Error 
+            messageFr="Désolé, il y a problème lors de la récupération des données" 
+            messageAuto={error} /> 
+        }
         { isLoaded ? <ArgoList data={data} setData={setData} /> : <Spinner /> }
       </main>
       <Footer />

@@ -1,4 +1,4 @@
-import API from '../api';
+import API from '../utils/api';
 
 function ArgoItem({item, data, setData}) {
 

@@ -1,23 +1,50 @@
 import React, { useState } from "react";
-import API from '../api';
+import API from '../utils/api';
+import Error from './Error';
+
+import { checkName , getNormalizedString, capitalizeFirstChar } from '../utils/helpers'
 
 function ArgoForm({data, setData}) {
  
-  const [name, setName] = useState('')
+  const [argoName, setArgoName] = useState('')
+  const [error, setError] = useState(null)
 
   // Add a new Argonaute
   async function onSubmit(e) {
     e.preventDefault();
-    API.post('/add', {name})
-    .then(response => {
-        setData([...data, response.data]);
-        setName("");
-    });
+
+    const isValidName = checkName(argoName)
+
+    // Check number of items
+    if ( data.length < 50) {
+
+      // Check Valid String
+      if (isValidName) {
+        //const normalizedName = getNormalizedString(argoName);
+        const normalizedName = argoName.toLowerCase().trim();
+        const newName = capitalizeFirstChar(normalizedName);
+
+        // POST request
+        API.post('/add', {name:newName} )
+        .then(response => {
+            setData([...data, response.data]);
+            setArgoName("");
+            setError(null)
+        })
+        .catch( (err) => {
+          setError(err.message)
+        });
+      } else  {
+        setError("Veuillez entrer un nom valide.")
+      }
+    } else  {
+      setError("L'Argo est limité à 50 personnes.")
+    }
   }
 
   return (
-    <section className="py-5">
-      <div className='container mx-auto w-50'>
+    <section className="py-5 border-bottom">
+      <div className='container' style={{ maxWidth:"1000px"}}>
       <h2>Ajouter un⸱e Argonaute</h2>
       <form 
         onSubmit={onSubmit}
@@ -31,9 +58,9 @@ function ArgoForm({data, setData}) {
               id="name-field"
               className="form-control form-control-lg" 
               placeholder="Charalampos"
-              value={name}
+              value={argoName}
               onChange={event => {
-                setName(event.target.value);
+                setArgoName(event.target.value);
               }}
               required
               pattern="[A-ÿ\-\s]{3,32}"
@@ -46,6 +73,13 @@ function ArgoForm({data, setData}) {
 
       </form>
     </div>
+
+    { error && 
+          <Error 
+            messageFr="Il y a eu un problème lors de l'envoie de la donnée" 
+            messageAuto={error} />
+      }
+    
     </section>
   );
 }

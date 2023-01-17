@@ -22,6 +22,8 @@ app.use(express.static(path.resolve(__dirname, '../frontend/dist'))); // Front-e
 
 // Database 
 mongoose.set('strictQuery', false)
+//process.env.DB_ATLAS
+//process.env.DB_LOCALHOST
 mongoose.connect( process.env.DB_ATLAS ,  { useNewUrlParser: true, useUnifiedTopology: true } );
 const db = mongoose.connection;
 db.on('error', (err) => console.error(err))

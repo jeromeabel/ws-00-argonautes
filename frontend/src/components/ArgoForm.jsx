@@ -8,8 +8,6 @@ function ArgoForm({data, setData}) {
   // Add a new Argonaute
   async function onSubmit(e) {
     e.preventDefault();
-    //const newArgonaute = {name};
-    //axios.post('http://localhost:3000/api/add', newArgonaute)
     API.post('/add', {name})
     .then(response => {
         setData([...data, response.data]);
@@ -39,7 +37,7 @@ function ArgoForm({data, setData}) {
               }}
               required
               pattern="[A-ÿ\-\s]{3,32}"
-              title="Doit comporter au moins trois caractères"
+              title="Veuillez écrire au moins trois caractères"
               />
           </div>
         </div>

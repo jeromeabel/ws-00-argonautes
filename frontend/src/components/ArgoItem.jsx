@@ -5,8 +5,7 @@ function ArgoItem({item, data, setData}) {
   // Delete
     async function deleteArgonaute(e, name) {
         e.preventDefault();
-        //axios.delete(`http://localhost:3000/api/remove/${name}`)
-        API.delete(`remove/${name}`)
+        API.delete(`/remove/${name}`)
         .then(response => {
             const newData = data.filter( (it) => it._id !== item._id );
             setData(newData);
@@ -15,12 +14,12 @@ function ArgoItem({item, data, setData}) {
 
     return (
         <div 
-            className="p-4 fs-5 rounded bg-light d-flex justify-content-between align-items-center">
+            className="px-4 py-1 fs-5 border rounded bg-light d-flex justify-content-between align-items-center">
             {item.name}
             <button 
-                className="btn btn-lg fs-3 text-danger"  
+                className="btn btn-lg fs-2 text-danger"  
                 onClick={ (e) => deleteArgonaute(e, item.name) }>
-                    <i className="bi bi-x-circle "></i>
+                    <i className="bi bi-x-circle-fill"></i>
             </button>
         </div>
     )

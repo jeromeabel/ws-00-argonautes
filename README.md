@@ -1,5 +1,5 @@
-# Wild Code School Challenge 00 - Les Argonautes
-Aider Jason à constituer son équipage
+# Les Argonautes
+Challenge Wild Code School : aider Jason à constituer son équipage avcc un formulaire Web
 
 ## Démo
 https://argonautes.onrender.com/
@@ -11,7 +11,7 @@ https://argonautes.onrender.com/
 
 **Choix techniques : MERN Stack**
 - Front-end : yarn, Vite, React, Axios
-- Back-end : yarn, Node, Express, MongoDB (Atlas)
+- Back-end : yarn, Node, Express, MongoDB (Cloud Atlas)
 
 **Compétences**
 - Créer une application web simple
@@ -23,6 +23,7 @@ https://argonautes.onrender.com/
 - [ ] Documentation
 - [ ] ESLINT
 - [ ] Validation côté serveur
+- [ ] Responsive
 
 **Done**
 - [x] Copie du template du projet

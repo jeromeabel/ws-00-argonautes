@@ -31,7 +31,7 @@ Wild Code School Challenge : help Jason build his crew with a web form
 
 ## 🚀 Usage
 - cd client && yarn dev
-- cd client && yarn dev
+- cd server && yarn dev
 
 ## 👤 Author
 - [@jeromeabel](https://github.com/jeromeabel)

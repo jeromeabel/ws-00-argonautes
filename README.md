@@ -1,39 +1,44 @@
-# Les Argonautes
-Challenge Wild Code School : aider Jason à constituer son équipage avcc un formulaire Web
+[![Node](https://img.shields.io/badge/nodejs-333333?logo=nodedotjs)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/react-20232A?logo=react)](https://reactjs.org/)
+[![MongoDB](https://img.shields.io/badge/mongoDB-20232A?logo=mongodb)]
+[![Express](https://img.shields.io/badge/express-20232A?logo=express)]
 
-## Démo
-https://argonautes.onrender.com/
+# Argonaut crew 👋
+Wild Code School Challenge : help Jason build his crew with a web form
 
-## Challenge
-**Fonctionnalités**
-- Front-end : une seule page avec formulaire
-- Back-end API : Base de données - lister, ajouter et supprimer
+**Features**
+- Front-end : SPA with a form
+- Back-end : CRUD Database and API Calls : get, add, delete
 
-**Choix techniques : MERN Stack**
+**Stack Choice : MERN Stack**
 - Front-end : yarn, Vite, React, Axios
 - Back-end : yarn, Node, Express, MongoDB (Cloud Atlas)
 
-**Compétences**
-- Créer une application web simple
-- Stocker les données de cette application dans une base de données
+**Skills**
+- Build a simple web app
+- Store data into a data base
 
-## TASKS
+## ✨ Demo
+- https://argonautes.onrender.com/ : Very slow to access to onrender.com !
 
-**Todo**
-- [ ] Documentation
-- [ ] ESLINT
-- [ ] Validation côté serveur
-- [ ] Responsive
+![Arggonautes Home Page](screen.png)
 
-**Done**
-- [x] Copie du template du projet
-- [x] Installation MongoDB / Linux
-- [x] Back-end
-    - [x] Configuration : dépendances et script
-    - [x] MVC + CRUD
-    - [x] Deploy on Render.com + MongoAtlas + .env
-- [x] Front-end
-    - [x] React : components, useEffect, HTTP Requests
-    - [x] CSS Bootstrap + style inline jsx
-    - [x] Validation du formulaire : chaine de caractères, nombre limité à 50, regex
-    - [x] Loader et messages d'erreurs
+## 🚨 Prerequisites
+- Node
+- Yarn
+
+## 🛠️ Installation
+- cd client && yarn install
+- cd server && yarn install
+
+## 🚀 Usage
+- cd client && yarn dev
+- cd client && yarn dev
+
+## 👤 Author
+- [@jeromeabel](https://github.com/jeromeabel)
+
+
+## 📝 License
+- [GNU--GPL--3](https://www.gnu.org/licenses/gpl-3.0.fr.html) licensed.
+
